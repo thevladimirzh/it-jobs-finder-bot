@@ -29,6 +29,13 @@ PostgreSQL (local: 14, Docker: `postgres:16-alpine`), Docker Compose.
   отдельным блоком после сторонних импортов — доверять `ruff check --fix`.
 - Docker-демон на машине разработки нестабилен: Docker-файлы проверяются статически,
   `docker build`/`docker compose` в цикле не запускать.
+- Кэш ruff (`.ruff_cache`) может маскировать ошибки после правок импортов (H-наблюдение I-3):
+  при сомнении — `ruff check . --no-cache`; ложный зелёный был из-за протухшего кэша.
+- CI: `.github/workflows/ci.yml` (push в `main` и pull_request): postgres:16 сервис с БД
+  `jobs_test`, `ruff check . && ruff format --check .`, `.venv/bin/pip-audit -r requirements.txt`
+  (обязательный шаг, R49), `.venv/bin/python -m pytest` — полный suite включая e2e.
+  Секретов в CI нет: `BOT_TOKEN=ci-dummy-token`, `ADMIN_ID=1`, `TEST_DATABASE_URL` фиктивный
+  (localhost). Ruff в CI ставится отдельно пином (см. workflow).
 
 ## Настройки и конфигурация
 
