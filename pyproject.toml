@@ -1,0 +1,13 @@
+# Tooling configuration only: the project is NOT a distributable package
+# (pip install -e . is not supported; run everything from the repo root).
+
+[tool.ruff]
+line-length = 100
+target-version = "py312"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B", "SIM"]
+
+[tool.pytest.ini_options]
+asyncio_mode = "auto"
+testpaths = ["tests"]

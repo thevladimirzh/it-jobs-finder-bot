@@ -1,0 +1,30 @@
+<!-- synthetic edge-case data — regression only (not representative of live markup); источник: синтетический (не живой образец), назначение: регрессия нормализации старых маркеров разметки (fallback-цепочка, I-3). -->
+<!DOCTYPE html>
+<html lang="ru">
+<head><title>Вакансии — Habr Career</title></head>
+<body>
+<div class="vacancies-list">
+  <article class="vacancy-card">
+    <a class="vacancy-card__title" data-qa="vacancy-title" href="/vacancies/1000?utm_source=habr">Backend Developer</a>
+    <div class="vacancy-card__company" data-qa="vacancy-company">Habr Company</div>
+    <div class="vacancy-card__salary" data-qa="vacancy-salary">от 250 000 &#8381;</div>
+    <div class="vacancy-card__description" data-qa="vacancy-description">go kubernetes microservices</div>
+    <time datetime="2026-03-13T12:00:00+03:00"></time>
+  </article>
+  <article class="vacancy-card">
+    <a class="vacancy-card__title" data-qa="vacancy-title" href="/vacancies/1001">Frontend Developer</a>
+    <div class="vacancy-card__company" data-qa="vacancy-company">Lavanda</div>
+    <div class="vacancy-card__salary" data-qa="vacancy-salary">100 000 &#8211; 180 000 &#8381;</div>
+    <div class="vacancy-card__description" data-qa="vacancy-description">react typescript</div>
+    <time datetime="2026-03-12T09:00:00+03:00"></time>
+  </article>
+  <article class="vacancy-card">
+    <a class="vacancy-card__title" data-qa="vacancy-title" href="/vacancies/1002">DevOps Engineer</a>
+    <div class="vacancy-card__company" data-qa="vacancy-company">Kaktus</div>
+    <div class="vacancy-card__salary" data-qa="vacancy-salary"></div>
+    <div class="vacancy-card__description" data-qa="vacancy-description">docker terraform sre</div>
+    <time datetime="2026-03-11T14:00:00+03:00"></time>
+  </article>
+</div>
+</body>
+</html>

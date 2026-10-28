@@ -1,0 +1,15 @@
+# Runtime dependencies (exact top-level pins; transitive deps resolved by pip).
+# Versions are pinned for reproducible installs — bump deliberately, then re-verify tests.
+# Security minimums (F-01/F-02, docs/security/report.md) are ranges on purpose:
+#   apscheduler >=3.11.3 — GHSA-2r6w-vc63-g3hx / CVE-2026-31072 fixes (3.x API kept)
+#   aiohttp >=3.14.1 — CVE-2026-34993 et al.; requires aiogram >=3.29.1 (3.27/3.28 pin aiohttp<3.14)
+#   pydantic-settings >=2.14.2 — CVE-2026-58203 fix (2.14.2 needs pydantic>=2.7.0; aiogram 3.29.1 keeps pydantic<2.14 → pydantic 2.12.x fits both)
+aiogram==3.29.1
+aiohttp>=3.14.1
+alembic==1.16.5
+apscheduler>=3.11.3,<4
+asyncpg==0.30.0
+beautifulsoup4==4.14.3
+httpx==0.28.1
+pydantic-settings>=2.14.2,<3
+SQLAlchemy[asyncio]==2.0.46
