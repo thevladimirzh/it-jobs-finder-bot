@@ -22,7 +22,9 @@ jobs:
     env:
       TEST_DATABASE_URL: postgresql+asyncpg://jobs:jobs@localhost:5432/jobs_test
       BOT_TOKEN: ci-dummy-token
-      ADMIN_ID: "1"
+      # Должен совпадать с конфестом (tests/conftest.py): SEC-07 строит «импосторов»
+      # из admin_id (admin_id // 10 or 1) — при 1 импостор равен самому админу.
+      ADMIN_ID: "1000"
 
     services:
       postgres:
